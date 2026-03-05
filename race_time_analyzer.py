@@ -88,3 +88,9 @@ print(f"Overall average time across all races: {overall_avg:.2f}")
 print(f"Fastest time across all races: {fastest_overall:.2f}")
 print(f"Slowest time across all races: {slowest_overall:.2f}")
 print(f"Fastest race average: {fastest_average:.2f}")
+
+#For Monday
+#Functions to:
+#return a valid integer > 0. def get_valid_positive_int(prompt):
+#return a valid float > 0. def get_valid_positive_float(prompt):
+#return an average. def get_and_calculate_average (sum,count):
