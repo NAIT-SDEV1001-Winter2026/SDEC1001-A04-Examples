@@ -59,7 +59,7 @@ movies = [
 from csv import writer
 
 #write a list of dictionaries to a file
-with open(file_path,"w") as f:
+with open(file_path,"w",newline="") as f:
     field_names = ["Movie","Rating","Budget"]
     writer = DictWriter(f,fieldnames = field_names)
     writer.writeheader()#write the header row to the file
