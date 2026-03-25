@@ -12,11 +12,16 @@ class Car:
     #A method is a function that is in a class
     #Constructor runs when we create an object (instantiate) from the class
     #self refers to the current object being created. It is always the FIRST parameter
-      
+    #Class level attribute
+    #applies to all car objects
+    wheels = 4  
+    #Instance level attributes apply to each individual object seperately
     def  __init__ (self, make, model, year):
         self.make = make#the make of this object will be the value of the parameter make
         self.model = model
         self.year = year
+        self.speed = 0
+
     #When you print an object __str__ is called. The default behavior of __str__ is to return the memory location.
     #We want to OVERRIDE that behavior to return a different string
     def __str__ (self):
@@ -32,7 +37,22 @@ class Car:
     #When someone uses ==, this is how to compare the objects
     def __eq__(self, other):
         return self.make == other.make and self.model == other.model and self.year == other.year
-                
+    #METHODS(behaviours)
+    #A function in a class is called a method
+    #Methods are things that the object can do
+    def honk(self):
+        print(f"{self.make}, {self.model} says Beep Beep")
+
+    #Method called get_age that returns the age (in years) of the car. 
+    def get_age(self):
+        return 2026-self.year
+    #Accelerate the car by an amount
+    def accelerate(self, amount):
+        if self.speed + amount > 100:
+            print("Too fast")
+        else:        
+            self.speed += amount
+
 #Mainline
 if __name__ == "__main__":
     car1 = Car("Ford","F150",2020)
@@ -70,10 +90,22 @@ if __name__ == "__main__":
     else:
         print("Not the same")
 
-    
+    #Additional attribute for one object
+    #NOT RECOMENDED
+    car1.color = "red"
 
+    print(car1.color)
+    # print(car2.color)
 
+    #Honk the horn of car1
+    car1.honk()
+
+    print(car1.get_age())
+    print(car2.get_age())
     
-    
+    car1.accelerate(50)
+    print (car1.speed)
+    car1.accelerate(20)
+    print (car1.speed)
 
 
